@@ -1,0 +1,14 @@
+<template>
+	<require from="resources/elements/my-second-component.html"></require>
+	<div class="container">
+		<div class="row">
+			<h3>Select an option from the navigation bar above</h3>
+		</div>
+	</div>
+	<div if.bind="MyObject">
+		<!-- Globally registered component doesn't work with [i18n] -->
+		<my-component obj.bind="MyObject"></my-component>
+		<!-- locally registered component works with [i18n] -->
+		<my-second-component obj.bind="MyObject"></my-second-component>
+	</div>
+</template>
